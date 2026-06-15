@@ -24,6 +24,8 @@ const NavBar = () => {
             return () => window.removeEventListener("scroll", handleScroll);
         },[])
 
+        // console.log(import.meta.env.BASE_URL)
+
     return (  
         <header className={`
             fixed top-0 left-0 w-full z-50

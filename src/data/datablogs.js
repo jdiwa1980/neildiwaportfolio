@@ -1,4 +1,4 @@
-const ghpage = "https://github.com/jdiwa1980/neildiwaportfolio/tree/main/public/projects"
+
 
 export const blogs = [
     
@@ -6,14 +6,14 @@ export const blogs = [
         title: "Article1",
         content: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Ab, explicabo!`,
-        imgurl:`${ghpage}/projects/design.jpg`,
+        imgurl:"projects/design.jpg",
         href: ""
     },
     {
         title: "Article2",
         content: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Ab, explicabo!`,
-        imgurl:`${ghpage}/editing.jpg`,
+        imgurl:`projects/editing.jpg`,
         href: ""
     },
     {
