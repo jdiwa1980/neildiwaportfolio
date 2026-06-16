@@ -1,6 +1,6 @@
 import { BsArrowUpRight } from "react-icons/bs";
 
-const Button = ({ content, variant="dark"}) => {
+const Button = ({ content, variant="dark", ...props }) => {
     const styles = {
         root: {
             base: "flex h-10 place-items-center gap-2 rounded-full",
@@ -16,11 +16,13 @@ const Button = ({ content, variant="dark"}) => {
     
     
     return ( 
-        <div className="flex mx-4 place-items-center gap-5 text-base max-md:w-full max-md:flex-col max-md:place-content-center">
+        <div className="flex mx-4 place-items-center gap-5 text-base max-md:w-full max-md:flex-col max-md:place-content-center"
+            
+        >
                     <a
                         href="#contact"
                         aria-label="signup"
-                        className={`${styles.root.base} ${styles.root[variant]}`}
+                        className={`${styles.root.base} ${styles.root[variant]}`}{...props}
                         
                     >
                         <span>{content}</span>

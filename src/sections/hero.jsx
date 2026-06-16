@@ -1,10 +1,11 @@
 
+import { useState } from "react";
 import Button from "../components/Button";
 import Skills from "../components/skils";
 
-const Hero = () => {
+const Hero = ({ onContactClick }) => {
 
-console.log(import.meta.env.BASE_URL)
+const [isContactOpen, setIsContactOpen] = useState(false);
 
     return (
         <section
@@ -40,7 +41,12 @@ console.log(import.meta.env.BASE_URL)
                     
 
                     <div className="pt-5 self-start animate-fade-up animation-delay-600">   
-                            <Button content="Get in touch" variant="lite" />
+                            <Button 
+                                content="Get in touch" 
+                                variant="lite" 
+                                // onClick={() => setIsContactOpen(true)}
+                                onClick={onContactClick}
+                            />
                     </div>
                     
                 </div>

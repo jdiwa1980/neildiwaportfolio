@@ -10,8 +10,8 @@ export const cardList = [
             title:"Apple",
             content: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, voluptates.",
             picurl: "/projects/forest.jpg",
-            git: "https://github.com/jdiwa1980/aprilportfolio",
-            url:"https://aprilportfolio-seven.vercel.app/"
+            git: "#",
+            url:"#"
         },
         {
             title:"Ipsum",
@@ -19,28 +19,28 @@ export const cardList = [
             optio totam perspiciatis, perferendis assumenda nulla eaque autem ad magnam 
             quisquam voluptates dolor nostrum quae odit numquam voluptas in atque.`,
             picurl: "/projects/mountain.jpg",
-            git: "https://github.com/jdiwa1980/aprilportfolio",
-            url:"https://aprilportfolio-seven.vercel.app/"
+            git: "#",
+            url:"#"
         },
         {
             title:"Fortune 500",
             content:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum dolorum unde voluptatibus fuga soluta consequuntur!",
             picurl: "/projects/editing.jpg",
-            git: "https://github.com/jdiwa1980/aprilportfolio",
-            url:"https://aprilportfolio-seven.vercel.app/"
+            git: "#",
+            url:"#"
         },
         {
             title:"Amazon",
             content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, tempora.",
             picurl: "/projects/photography.jpg",
-            git: "https://github.com/jdiwa1980/aprilportfolio",
-            url:"https://aprilportfolio-seven.vercel.app/"
+            git: "#",
+            url:"#"
         },
         {
             title:"Google",
             content:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, voluptates.",
             picurl: "/projects/design.jpg",
-            git: "https://github.com/jdiwa1980/aprilportfolio",
-            url:"https://aprilportfolio-seven.vercel.app/"
+            git: "#",
+            url:"#"
         },
     ]

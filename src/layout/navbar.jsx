@@ -64,7 +64,9 @@ const NavBar = () => {
                 </div>
                 {/* CTA Button  */}
                 <div className="hidden md:flex justify-self-end mr-8">
-                        <Button content="Get in touch" />
+                        <Button content="Get in touch"
+                                onClick={() => console.log("test")}
+                        />
                 </div>
             </nav>
             {/* Mobile Menu backdrop */}
@@ -115,7 +117,10 @@ const NavBar = () => {
                         hover:translate-y-0.5 
                         transition-transform 
                         duration-300">
-                        <Button content="Get in touch"/>
+                        <Button content="Get in touch"
+                                onClick={(e) => console.log("test")}
+                        
+                        />
                     </div>
                 </div>
             </div>

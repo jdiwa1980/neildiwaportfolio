@@ -21,12 +21,12 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: "Roboto", sans-serif;
+    
 }
 
 body {
-  /* font-family: "Roboto", sans-serif; */
-  font-family: Consolas, "Courier New", monospace;
+  
+  font-family: Consolas, ui-monospace, SFMono-Regular, "Segoe UI Mono", "Liberation Mono","Courier New", monospace;
 }
 
 .header-links {

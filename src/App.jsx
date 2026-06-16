@@ -7,18 +7,27 @@ import Projects from "./sections/projects"
 import Footer from "./layout/footer"
 import Testimonials from "./sections/testimonials"
 import Blogs from "./sections/blogs"
+import ContactModal from "./components/ContactModal"
+import { useState } from "react"
 
 function App() {
+
+  const [isContactOpen, setIsContactOpen] = useState(false);
   
 
   return (
       <div className="min-h-screen overflow-x-hidden">
-        <NavBar />
+        <NavBar onContactClick={() => setIsContactOpen(true)}/>
         <main>
-          <Hero />
+          <Hero onContactClick={() => setIsContactOpen(true)} />
           <Projects />
           <Testimonials />
           <Blogs />
+          <ContactModal 
+            isOpen={isContactOpen}
+            onClose={() => setIsContactOpen(false)}
+          />
+
         </main>
         
         <Footer />
