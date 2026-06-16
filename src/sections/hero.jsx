@@ -53,7 +53,7 @@ console.log(import.meta.env.BASE_URL)
                     >
                         <img
                             // src="/pics/door.png"
-                            src={`${import.meta.env.BASE_URL}/pics/door.png`}
+                            src={`${import.meta.env.BASE_URL}pics/door.png`}
                             alt="app"
                             className="reveal-hero-img z-1 h-full w-full object-contain animate-fade-in animation-delay-800"
                         />
