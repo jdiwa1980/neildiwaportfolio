@@ -50,7 +50,8 @@ const Hero = () => {
                         className="relative flex max-h-145 min-h-112.5 min-w-87.5 max-w-162.5 overflow-hidden max-lg:h-fit max-lg:max-h-80 max-lg:min-h-45 max-lg:w-[320px] max-lg:min-w-[320px]"
                     >
                         <img
-                            src="/pics/door.png"
+                            // src="/pics/door.png"
+                            src={`${import.meta.env.BASE_URL}pics/door.png`}
                             alt="app"
                             className="reveal-hero-img z-1 h-full w-full object-contain animate-fade-in animation-delay-800"
                         />
