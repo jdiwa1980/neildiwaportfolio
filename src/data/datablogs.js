@@ -6,14 +6,14 @@ export const blogs = [
         title: "Article1",
         content: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Ab, explicabo!`,
-        imgurl:"projects/design.jpg",
+        imgurl:"/projects/design.jpg",
         href: ""
     },
     {
         title: "Article2",
         content: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Ab, explicabo!`,
-        imgurl:`projects/editing.jpg`,
+        imgurl:`/projects/editing.jpg`,
         href: ""
     },
     {
