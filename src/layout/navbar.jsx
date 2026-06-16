@@ -42,7 +42,7 @@ const NavBar = () => {
                     className="md:flex h-12.5 p-1 text-2xl font-medium"
                     href="#"
                 >
-                    <img src={`${import.meta.env.BASE_URL}icons/idee.png`} alt="idee icon" className="h-15 w-auto"/>
+                    <img src={`${import.meta.env.BASE_URL}/icons/idee.png`} alt="idee icon" className="h-15 w-auto"/>
                 </a>
                 {/* Mobile Menu Button  */}
                 <button className="ml-auto md:hidden p-2 mr-2 cursor-pointer z-60 relative"

@@ -4,6 +4,8 @@ import Skills from "../components/skils";
 
 const Hero = () => {
 
+console.log(import.meta.env.BASE_URL)
+
     return (
         <section
             className="flex min-h-[75vh] w-full flex-col  pt-10 overflow-hidden max-lg:p-4 max-md:mt-12.5"
@@ -51,7 +53,7 @@ const Hero = () => {
                     >
                         <img
                             // src="/pics/door.png"
-                            src={`${import.meta.env.BASE_URL}pics/door.png`}
+                            src={`${import.meta.env.BASE_URL}/pics/door.png`}
                             alt="app"
                             className="reveal-hero-img z-1 h-full w-full object-contain animate-fade-in animation-delay-800"
                         />

@@ -1,8 +1,6 @@
 import { blogs } from "../data/datablogs";
 import { BsArrowRight } from "react-icons/bs";
 
-console.log(blogs[0].content);
-
 const Blogs = () => {
     return (  
         <section
