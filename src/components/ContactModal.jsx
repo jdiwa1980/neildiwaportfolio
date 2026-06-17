@@ -2,11 +2,51 @@ import { RxCross2 } from "react-icons/rx";
 import { GoLocation } from "react-icons/go";
 import { BsFillTelephoneOutboundFill } from "react-icons/bs";
 import { CiMail } from "react-icons/ci";
-
-
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser'
+import { useRef, useState } from "react";
 
 const ContactModal = ({ isOpen, onClose }) => {
+
+    const formRef = useRef()
+
+    const [ isSending , setIsSending ] = useState(false);
+
     if (!isOpen) return null;
+
+    
+
+    const sendEmail = async (e) => {
+        e.preventDefault();
+        setIsSending(true)
+        try {
+            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+            // use to check if entries are saving to formRef.current
+            // const formData = Object.fromEntries(
+            //     new FormData(formRef.current).entries()
+            // )
+            // console.log(formData);
+            const formData = formRef.current
+            const result = await emailjs.sendForm(
+                serviceId,
+                templateId,
+                formData,
+                publicKey
+            );
+
+            console.log("Success!", result.status, result.text);// result.text = "OK" if email sent
+            alert("Message sent successfully!")
+            formRef.current.reset();
+            
+        }
+        catch (err) {
+            console.error(err)
+            alert("failed to send message.")
+        } finally {
+            setIsSending(false)
+        }
+    }
 
     return (
         <>
@@ -46,20 +86,28 @@ const ContactModal = ({ isOpen, onClose }) => {
                                 </div>
                             </div>
                             {/* form section right side  */}
-                            <form  className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+                            <form   className="flex flex-col py-6 space-y-6 md:py-0 md:px-6"
+                                    ref={formRef}
+                                    onSubmit={sendEmail}
+                            >
                                 <label className="block">
                                     <span className="mb-2 font-medium">Full name</span>
-                                    <input type="text" placeholder="Leroy Jenkins" className="block w-full rounded-md shadow-sm border border-gray-300 bg-gray-100 px-4 py-2 focus:outline-none focus:ring-4 focus:ring-green-200 focus:border-green-300" />
+                                    <input required name="name" type="text" placeholder="Leroy Jenkins" className="block w-full rounded-md shadow-sm border border-gray-300 bg-gray-100 px-4 py-2 focus:outline-none focus:ring-4 focus:ring-green-200 focus:border-green-300" />
                                 </label>
                                 <label className="block">
-                                    <span className="mb-2 font-medium">Email address</span>
-                                    <input type="email" placeholder="leroy@jenkins.com" className="block w-full rounded-md shadow-sm border border-gray-300 bg-gray-100 px-4 py-2 focus:outline-none focus:ring-4 focus:ring-green-200 focus:border-green-300" />
+                                    <span  className="mb-2 font-medium">Email address</span>
+                                    <input required name="email" type="email" placeholder="leroy@jenkins.com" className="block w-full rounded-md shadow-sm border border-gray-300 bg-gray-100 px-4 py-2 focus:outline-none focus:ring-4 focus:ring-green-200 focus:border-green-300" />
                                 </label>
                                 <label className="block">
                                     <span className="mb-2 font-medium">Message</span>
-                                    <textarea rows="5" className="block w-full rounded-md border border-gray-300 bg-gray-100 px-4 py-2 focus:outline-none focus:ring-4 focus:ring-green-200 focus:border-green-300"></textarea>
+                                    <textarea required name="message" rows="5" className="block w-full rounded-md border border-gray-300 bg-gray-100 px-4 py-2 focus:outline-none focus:ring-4 focus:ring-green-200 focus:border-green-300"></textarea>
                                 </label>
-                                <button type="button" className="self-center px-8 py-3 text-lg rounded-full focus:ring hover:ring  bg-green-200 text-gray-900 focus:ring-green-200 hover:ring-green-200 ">Submit</button>
+                                <button type="submit" 
+                                        className="self-center px-8 py-3 text-lg rounded-full focus:ring hover:ring  bg-green-200 text-gray-900 focus:ring-green-200 hover:ring-green-200"
+                                        disabled={isSending}
+                                        >
+                                            {isSending ? "Sending..." : "Submit"}
+                                </button>
                             </form>
                         </div>
                     </section> 
